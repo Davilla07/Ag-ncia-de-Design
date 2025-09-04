@@ -1,0 +1,384 @@
+/* ===== Tokens e Reset ===== */
+:root {
+    --bg: #0b0c10;
+    --surface: #111217;
+    --muted: #a0a4ab;
+    --text: #e9eef5;
+    --primary: #7c5cff;
+    --primary-600: #6a47ff;
+    --radius: 1.2rem;
+    --maxw: 1200px;
+
+    /* Tipografia fluida (unidades relativas + clamp) */
+    --step--1: clamp(0.92rem, 0.86rem + 0.2vw, 1rem);
+    --step-0: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+    --step-1: clamp(1.25rem, 1.05rem + 1.2vw, 1.75rem);
+    --step-2: clamp(1.6rem, 1.1rem + 2.6vw, 2.4rem);
+    --step-3: clamp(2.2rem, 1.6rem + 3.2vw, 3rem);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: var(--step-0);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0
+}
+
+/* ===== Layout base ===== */
+.container {
+    width: min(100% - 2rem, var(--maxw));
+    margin-inline: auto
+}
+
+.section {
+    padding-block: clamp(2.5rem, 2rem + 3vw, 6rem)
+}
+
+.section__header {
+    margin-bottom: 1.25rem
+}
+
+.section__header h2 {
+    font-size: var(--step-2);
+    margin: 0
+}
+
+.section__header p {
+    color: var(--muted);
+    margin: .4rem 0 0
+}
+
+/* ===== Header (Flexbox) ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    height: clamp(28px, 3.2vw, 40px)
+}
+
+.nav-toggle {
+    display: inline-flex;
+    background: transparent;
+    border: 1px solid #2a2b31;
+    color: var(--text);
+    padding: .6rem .8rem;
+    border-radius: .6rem
+}
+
+.nav {
+    display: none
+}
+
+.nav ul {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.nav a {
+    padding: .6rem .9rem;
+    border-radius: .6rem
+}
+
+.nav a:hover {
+    background: #1a1b22
+}
+
+/* ===== Hero ===== */
+.hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding-block: clamp(2rem, 2vw, 3rem)
+}
+
+.hero__content h1 {
+    font-size: var(--step-3);
+    line-height: 1.1;
+    margin: 0 0 .8rem
+}
+
+.hero__content p {
+    color: var(--muted);
+    margin: 0 0 1rem
+}
+
+.hero__cta {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap
+}
+
+.hero__media {
+    margin: 0
+}
+
+.hero__media img {
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+/* ===== Cards de serviços (CSS Grid) ===== */
+.grid {
+    display: grid;
+    gap: 1rem
+}
+
+.grid--cards {
+    grid-template-columns: 1fr
+}
+
+.card {
+    background: var(--surface);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.card h3 {
+    margin: .2rem 0 .3rem;
+    font-size: var(--step-1)
+}
+
+.card p {
+    color: var(--muted);
+    margin: 0
+}
+
+/* ===== Depoimentos (Flexbox) ===== */
+.testimonials {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column
+}
+
+.t-card {
+    margin: 0;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.t-card cite {
+    display: block;
+    margin-top: .4rem;
+    color: var(--muted);
+    font-style: normal
+}
+
+/* ===== Sobre (Grid 2 colunas em md+) ===== */
+.about {
+    display: grid;
+    gap: 1rem
+}
+
+.about__media img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.about__content h2 {
+    margin-top: 0;
+    font-size: var(--step-2)
+}
+
+.check {
+    margin: .8rem 0 0
+}
+
+.check li {
+    position: relative;
+    padding-left: 1.4rem
+}
+
+.check li+li {
+    margin-top: .3rem
+}
+
+.check li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary)
+}
+
+/* ===== Contato ===== */
+.contact__grid {
+    display: grid;
+    gap: 1rem
+}
+
+.contact__info p {
+    margin: .2rem 0
+}
+
+.form {
+    display: grid;
+    gap: .6rem
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: .8rem .9rem;
+    border-radius: .6rem;
+    border: 1px solid #2a2b31;
+    background: #0f1016;
+    color: var(--text)
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: 2px solid var(--primary)
+}
+
+/* ===== Footer ===== */
+.footer {
+    display: flex;
+    gap: 1rem;
+    padding-block: 2rem;
+    border-top: 1px solid #20212a;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.footer .social {
+    display: flex;
+    gap: .8rem
+}
+
+.footer .social a {
+    padding: .4rem .6rem;
+    border-radius: .5rem
+}
+
+.footer .social a:hover {
+    background: #1a1b22
+}
+
+/* ===== Botões ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .8rem 1rem;
+    border-radius: .8rem;
+    border: 1px solid #2a2b31;
+    font-weight: 600
+}
+
+.btn--primary {
+    background: var(--primary);
+    border-color: var(--primary-600);
+    color: #ffffff
+}
+
+.btn--primary:hover {
+    background: #d1c4ff;
+    color: #23234a;
+    filter: none;
+}
+
+.btn--ghost:hover {
+    background: #2d426e
+}
+
+/* ===== Gradiente de destaque ===== */
+.grad {
+    background: linear-gradient(90deg, #7c5cff, #2dd4bf 60%, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+/* ===== Breakpoints (mobile-first) ===== */
+@media (min-width: 640px) {
+    .nav {
+        display: block
+    }
+
+    .nav-toggle {
+        display: none
+    }
+
+    .grid--cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .testimonials {
+        flex-direction: row
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media (min-width: 900px) {
+    .hero {
+        grid-template-columns: 1.2fr 1fr
+    }
+
+    .grid--cards {
+        grid-template-columns: repeat(4, 1fr)
+    }
+
+    .about {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: center
+    }
+}

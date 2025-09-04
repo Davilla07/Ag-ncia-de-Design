@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agência Criativa Web — Design Digital</title>
+    <meta name="description" content="Agência Criativa Web: sites responsivos, branding e experiências digitais." />
+
+    <!-- Fonte (opcional): Inter -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header container">
+        <a class="logo" href="#" aria-label="Agência Criativa Web">
+            <img src="https://dummyimage.com/140x40/7c5cff/0b0c10&text=ACW" alt="Logo Agência Criativa Web" />
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">☰</button>
+
+        <nav id="site-nav" class="nav" aria-label="Navegação principal">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a class="btn btn--primary" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home / Hero -->
+    <section id="home" class="hero container">
+        <div class="hero__content">
+            <h1>Design que impulsiona <span class="grad">resultados</span>.</h1>
+            <p>Criamos sites responsivos, identidades visuais e experiências digitais modernas — pensadas para
+                conversão.</p>
+            <div class="hero__cta">
+                <a href="#contato" class="btn btn--primary">Solicitar proposta</a>
+                <a href="#portfolio" class="btn btn--ghost">Ver portfólio</a>
+            </div>
+        </div>
+        <figure class="hero__media">
+            <img src="https://picsum.photos/id/1060/800/600" srcset="
+          https://picsum.photos/id/1060/480/320 480w,
+          https://picsum.photos/id/1060/768/512 768w,
+          https://picsum.photos/id/1060/1200/800 1200w
+        " sizes="(max-width: 640px) 90vw, (max-width: 900px) 45vw, 40vw" alt="Mockups de telas modernas" />
+            <figcaption class="sr-only">Mockups de telas modernas</figcaption>
+        </figure>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="section container about">
+        <figure class="about__media">
+            <img src="https://picsum.photos/id/1011/800/600" srcset="
+          https://picsum.photos/id/1011/480/360 480w,
+          https://picsum.photos/id/1011/768/576 768w,
+          https://picsum.photos/id/1011/1200/900 1200w
+        " sizes="(max-width: 900px) 100vw, 50vw" alt="Equipe criativa colaborando" />
+            <figcaption class="sr-only">Equipe criativa colaborando</figcaption>
+        </figure>
+        <div class="about__content">
+            <h2>Sobre nós</h2>
+            <p>Somos uma agência orientada a métricas e estética. Unimos negócios, design e tecnologia para lançar
+                produtos com impacto.</p>
+            <ul class="check">
+                <li>Mobile-first e acessibilidade</li>
+                <li>Performance, SEO técnico e conteúdo</li>
+                <li>Processo colaborativo e transparente</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Serviços (Grid) -->
+    <section id="servicos" class="section container">
+        <header class="section__header">
+            <h2>Serviços</h2>
+            <p>Do conceito ao lançamento, entregamos soluções ponta a ponta.</p>
+        </header>
+
+        <div class="grid grid--cards">
+            <article class="card">
+                <h3>Design Gráfico</h3>
+                <p>Identidades visuais, materiais impressos e digitais que comunicam sua marca.</p>
+            </article>
+            <article class="card">
+                <h3>Desenvolvimento Web</h3>
+                <p>Sites e landing pages com performance, segurança e manutenção simples.</p>
+            </article>
+            <article class="card">
+                <h3>Branding</h3>
+                <p>Estratégia de marca, posicionamento e diretrizes consistentes.</p>
+            </article>
+            <article class="card">
+                <h3>UI/UX</h3>
+                <p>Wireframes, protótipos, testes e design system escalável.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="section container">
+        <header class="section__header">
+            <h2>Depoimentos</h2>
+        </header>
+        <div class="testimonials">
+            <blockquote class="t-card">“A equipe elevou nosso site e as conversões.” <cite>— Marina, CEO @ Fintop</cite>
+            </blockquote>
+            <blockquote class="t-card">“Design consistente e impacto em SEO.” <cite>— Carlos, Head de Mkt @
+                    Edutech</cite></blockquote>
+            <blockquote class="t-card">“Experiência fluida no mobile. Recomendo!” <cite>— Júlia, PM @ Retail</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section container contact">
+        <header class="section__header">
+            <h2>Contato</h2>
+        </header>
+
+        <div class="contact__grid">
+            <address class="contact__info">
+                <p><strong>Endereço:</strong> Rua Criativa, 123 — São Paulo, SP</p>
+                <p><strong>Telefone:</strong> <a href="tel:+5511999999999">(11) 99999-9999</a></p>
+                <p><strong>E‑mail:</strong> <a
+                        href="mailto:contato@agenciacriativaweb.com">contato@agenciacriativaweb.com</a></p>
+            </address>
+
+            <form class="form" action="#" method="post">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" placeholder="Seu nome" required />
+
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos seu projeto"
+                    required></textarea>
+
+                <button class="btn btn--primary" type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p>© <span id="year"></span> Agência Criativa Web. Todos os direitos reservados.</p>
+        <ul class="social">
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Behance">Behance</a></li>
+            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
