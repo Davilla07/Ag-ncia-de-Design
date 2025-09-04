@@ -1,4 +1,6 @@
-/* ===== Tokens e Reset ===== */
+/* =====================================================
+   Base & Tokens
+   ===================================================== */
 :root {
     --bg: #0b0c10;
     --surface: #111217;
@@ -9,7 +11,7 @@
     --radius: 1.2rem;
     --maxw: 1200px;
 
-    /* Tipografia fluida (unidades relativas + clamp) */
+    /* Tipografia fluida */
     --step--1: clamp(0.92rem, 0.86rem + 0.2vw, 1rem);
     --step-0: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
     --step-1: clamp(1.25rem, 1.05rem + 1.2vw, 1.75rem);
@@ -52,7 +54,10 @@ ul {
     margin: 0
 }
 
-.sr-only {
+/* =====================================================
+   Utilities (u-*) & Layout (l-*)
+   ===================================================== */
+.u-sr-only {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -64,252 +69,25 @@ ul {
     border: 0
 }
 
-/* ===== Layout base ===== */
-.container {
+.u-section {
+    padding-block: clamp(2.5rem, 2rem + 3vw, 6rem)
+}
+
+.u-grad-text {
+    background: linear-gradient(90deg, #7c5cff, #2dd4bf 60%, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.l-container {
     width: min(100% - 2rem, var(--maxw));
     margin-inline: auto
 }
 
-.section {
-    padding-block: clamp(2.5rem, 2rem + 3vw, 6rem)
-}
-
-.section__header {
-    margin-bottom: 1.25rem
-}
-
-.section__header h2 {
-    font-size: var(--step-2);
-    margin: 0
-}
-
-.section__header p {
-    color: var(--muted);
-    margin: .4rem 0 0
-}
-
-/* ===== Header (Flexbox) ===== */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-block: 1rem
-}
-
-.logo img {
-    display: block;
-    width: auto;
-    height: clamp(28px, 3.2vw, 40px)
-}
-
-.nav-toggle {
-    display: inline-flex;
-    background: transparent;
-    border: 1px solid #2a2b31;
-    color: var(--text);
-    padding: .6rem .8rem;
-    border-radius: .6rem
-}
-
-.nav {
-    display: none
-}
-
-.nav ul {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center
-}
-
-.nav a {
-    padding: .6rem .9rem;
-    border-radius: .6rem
-}
-
-.nav a:hover {
-    background: #1a1b22
-}
-
-/* ===== Hero ===== */
-.hero {
-    display: grid;
-    gap: 2rem;
-    align-items: center;
-    padding-block: clamp(2rem, 2vw, 3rem)
-}
-
-.hero__content h1 {
-    font-size: var(--step-3);
-    line-height: 1.1;
-    margin: 0 0 .8rem
-}
-
-.hero__content p {
-    color: var(--muted);
-    margin: 0 0 1rem
-}
-
-.hero__cta {
-    display: flex;
-    gap: .8rem;
-    flex-wrap: wrap
-}
-
-.hero__media {
-    margin: 0
-}
-
-.hero__media img {
-    border-radius: var(--radius);
-    outline: 1px solid #20212a
-}
-
-/* ===== Cards de serviços (CSS Grid) ===== */
-.grid {
-    display: grid;
-    gap: 1rem
-}
-
-.grid--cards {
-    grid-template-columns: 1fr
-}
-
-.card {
-    background: var(--surface);
-    padding: 1.2rem;
-    border-radius: var(--radius);
-    outline: 1px solid #20212a
-}
-
-.card h3 {
-    margin: .2rem 0 .3rem;
-    font-size: var(--step-1)
-}
-
-.card p {
-    color: var(--muted);
-    margin: 0
-}
-
-/* ===== Depoimentos (Flexbox) ===== */
-.testimonials {
-    display: flex;
-    gap: 1rem;
-    flex-direction: column
-}
-
-.t-card {
-    margin: 0;
-    padding: 1rem;
-    background: var(--surface);
-    border-radius: var(--radius);
-    outline: 1px solid #20212a
-}
-
-.t-card cite {
-    display: block;
-    margin-top: .4rem;
-    color: var(--muted);
-    font-style: normal
-}
-
-/* ===== Sobre (Grid 2 colunas em md+) ===== */
-.about {
-    display: grid;
-    gap: 1rem
-}
-
-.about__media img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius);
-    outline: 1px solid #20212a
-}
-
-.about__content h2 {
-    margin-top: 0;
-    font-size: var(--step-2)
-}
-
-.check {
-    margin: .8rem 0 0
-}
-
-.check li {
-    position: relative;
-    padding-left: 1.4rem
-}
-
-.check li+li {
-    margin-top: .3rem
-}
-
-.check li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: var(--primary)
-}
-
-/* ===== Contato ===== */
-.contact__grid {
-    display: grid;
-    gap: 1rem
-}
-
-.contact__info p {
-    margin: .2rem 0
-}
-
-.form {
-    display: grid;
-    gap: .6rem
-}
-
-.form input,
-.form textarea {
-    width: 100%;
-    padding: .8rem .9rem;
-    border-radius: .6rem;
-    border: 1px solid #2a2b31;
-    background: #0f1016;
-    color: var(--text)
-}
-
-.form input:focus,
-.form textarea:focus {
-    outline: 2px solid var(--primary)
-}
-
-/* ===== Footer ===== */
-.footer {
-    display: flex;
-    gap: 1rem;
-    padding-block: 2rem;
-    border-top: 1px solid #20212a;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap
-}
-
-.footer .social {
-    display: flex;
-    gap: .8rem
-}
-
-.footer .social a {
-    padding: .4rem .6rem;
-    border-radius: .5rem
-}
-
-.footer .social a:hover {
-    background: #1a1b22
-}
-
-/* ===== Botões ===== */
+/* =====================================================
+   Components
+   ===================================================== */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -324,46 +102,293 @@ ul {
 .btn--primary {
     background: var(--primary);
     border-color: var(--primary-600);
-    color: #ffffff
+    color: #0b0c10
 }
 
 .btn--primary:hover {
-    background: #d1c4ff;
-    color: #23234a;
-    filter: none;
+    filter: brightness(1.05)
 }
 
 .btn--ghost:hover {
-    background: #2d426e
+    background: #1a1b22
 }
 
-/* ===== Gradiente de destaque ===== */
-.grad {
-    background: linear-gradient(90deg, #7c5cff, #2dd4bf 60%, #f472b6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent
+.section-header {
+    margin-bottom: 1.25rem
 }
 
-/* ===== Breakpoints (mobile-first) ===== */
+.section-header__title {
+    font-size: var(--step-2);
+    margin: 0
+}
+
+.section-header__subtitle {
+    color: var(--muted);
+    margin: .4rem 0 0
+}
+
+.list-check {
+    margin: .8rem 0 0
+}
+
+.list-check__item {
+    position: relative;
+    padding-left: 1.4rem
+}
+
+.list-check__item+.list-check__item {
+    margin-top: .3rem
+}
+
+.list-check__item::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary)
+}
+
+/* =====================================================
+   Blocks (BEM)
+   ===================================================== */
+/* Header */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem
+}
+
+.site-header__logo-img {
+    display: block;
+    width: auto;
+    height: clamp(28px, 3.2vw, 40px)
+}
+
+.site-header__toggle {
+    display: inline-flex;
+    background: transparent;
+    border: 1px solid #2a2b31;
+    color: var(--text);
+    padding: .6rem .8rem;
+    border-radius: .6rem
+}
+
+/* Primary nav */
+.primary-nav {
+    display: none
+}
+
+.primary-nav__list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.primary-nav__link {
+    padding: .6rem .9rem;
+    border-radius: .6rem
+}
+
+.primary-nav__link:hover {
+    background: #1a1b22
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding-block: clamp(2rem, 2vw, 3rem)
+}
+
+.hero__title {
+    font-size: var(--step-3);
+    line-height: 1.1;
+    margin: 0 0 .8rem
+}
+
+.hero__text {
+    color: var(--muted);
+    margin: 0 0 1rem
+}
+
+.hero__actions {
+    display: flex;
+    gap: .8rem;
+    flex-wrap: wrap
+}
+
+.hero__media {
+    margin: 0
+}
+
+.hero__media img {
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+/* About */
+.about {
+    display: grid;
+    gap: 1rem
+}
+
+.about__media img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.about__title {
+    margin-top: 0;
+    font-size: var(--step-2)
+}
+
+.about__text {
+    margin: 0.25rem 0 0
+}
+
+/* Services */
+.services {}
+
+.services__list {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr
+}
+
+.service-card {
+    background: var(--surface);
+    padding: 1.2rem;
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.service-card__title {
+    margin: .2rem 0 .3rem;
+    font-size: var(--step-1)
+}
+
+.service-card__text {
+    color: var(--muted);
+    margin: 0
+}
+
+/* Testimonials */
+.testimonials {}
+
+.testimonials__list {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column
+}
+
+.testimonials__item {
+    margin: 0;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: var(--radius);
+    outline: 1px solid #20212a
+}
+
+.testimonials__item cite {
+    display: block;
+    margin-top: .4rem;
+    color: var(--muted);
+    font-style: normal
+}
+
+/* Contact */
+.contact {}
+
+.contact__layout {
+    display: grid;
+    gap: 1rem
+}
+
+.contact__info-line {
+    margin: .2rem 0
+}
+
+.contact__link {
+    text-decoration: none
+}
+
+/* Form */
+.form {
+    display: grid;
+    gap: .6rem
+}
+
+.form__input,
+.form__textarea {
+    width: 100%;
+    padding: .8rem .9rem;
+    border-radius: .6rem;
+    border: 1px solid #2a2b31;
+    background: #0f1016;
+    color: var(--text)
+}
+
+.form__input:focus,
+.form__textarea:focus {
+    outline: 2px solid var(--primary)
+}
+
+.form__button {
+    cursor: pointer
+}
+
+/* Footer */
+.site-footer {
+    display: flex;
+    gap: 1rem;
+    padding-block: 2rem;
+    border-top: 1px solid #20212a;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.site-footer__social {
+    display: flex;
+    gap: .8rem
+}
+
+.site-footer__social-link {
+    padding: .4rem .6rem;
+    border-radius: .5rem
+}
+
+.site-footer__social-link:hover {
+    background: #1a1b22
+}
+
+/* =====================================================
+   Responsive (mobile-first)
+   ===================================================== */
 @media (min-width: 640px) {
-    .nav {
+    .primary-nav {
         display: block
     }
 
-    .nav-toggle {
+    .site-header__toggle {
         display: none
     }
 
-    .grid--cards {
+    .services__list {
         grid-template-columns: repeat(2, 1fr)
     }
 
-    .testimonials {
+    .testimonials__list {
         flex-direction: row
     }
 
-    .contact__grid {
+    .contact__layout {
         grid-template-columns: 1fr 1fr
     }
 }
@@ -373,7 +398,7 @@ ul {
         grid-template-columns: 1.2fr 1fr
     }
 
-    .grid--cards {
+    .services__list {
         grid-template-columns: repeat(4, 1fr)
     }
 

@@ -7,41 +7,41 @@
     <title>Agência Criativa Web — Design Digital</title>
     <meta name="description" content="Agência Criativa Web: sites responsivos, branding e experiências digitais." />
 
-    <!-- Fonte (opcional): Inter -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-    <!-- CSS externo -->
     <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
     <!-- Header -->
-    <header class="header container">
-        <a class="logo" href="#" aria-label="Agência Criativa Web">
-            <img src="https://dummyimage.com/140x40/7c5cff/0b0c10&text=ACW" alt="Logo Agência Criativa Web" />
+    <header class="site-header l-container">
+        <a class="site-header__logo" href="#" aria-label="Agência Criativa Web">
+            <img class="site-header__logo-img" src="https://dummyimage.com/140x40/7c5cff/0b0c10&text=ACW"
+                alt="Logo Agência Criativa Web" />
         </a>
 
-        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">☰</button>
+        <button class="site-header__toggle" aria-expanded="false" aria-controls="primary-nav"
+            aria-label="Abrir menu">☰</button>
 
-        <nav id="site-nav" class="nav" aria-label="Navegação principal">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a class="btn btn--primary" href="#contato">Contato</a></li>
+        <nav id="primary-nav" class="primary-nav" aria-label="Navegação principal">
+            <ul class="primary-nav__list">
+                <li class="primary-nav__item"><a class="primary-nav__link" href="#home">Home</a></li>
+                <li class="primary-nav__item"><a class="primary-nav__link" href="#sobre">Sobre Nós</a></li>
+                <li class="primary-nav__item"><a class="primary-nav__link" href="#servicos">Serviços</a></li>
+                <li class="primary-nav__item"><a class="primary-nav__link" href="#depoimentos">Depoimentos</a></li>
+                <li class="primary-nav__item"><a class="primary-nav__link btn btn--primary" href="#contato">Contato</a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Home / Hero -->
-    <section id="home" class="hero container">
+    <section id="home" class="hero l-container">
         <div class="hero__content">
-            <h1>Design que impulsiona <span class="grad">resultados</span>.</h1>
-            <p>Criamos sites responsivos, identidades visuais e experiências digitais modernas — pensadas para
-                conversão.</p>
-            <div class="hero__cta">
+            <h1 class="hero__title">Design que impulsiona <span class="u-grad-text">resultados</span>.</h1>
+            <p class="hero__text">Criamos sites responsivos, identidades visuais e experiências digitais modernas —
+                pensadas para conversão.</p>
+            <div class="hero__actions">
                 <a href="#contato" class="btn btn--primary">Solicitar proposta</a>
                 <a href="#portfolio" class="btn btn--ghost">Ver portfólio</a>
             </div>
@@ -52,111 +52,116 @@
           https://picsum.photos/id/1060/768/512 768w,
           https://picsum.photos/id/1060/1200/800 1200w
         " sizes="(max-width: 640px) 90vw, (max-width: 900px) 45vw, 40vw" alt="Mockups de telas modernas" />
-            <figcaption class="sr-only">Mockups de telas modernas</figcaption>
+            <figcaption class="u-sr-only">Mockups de telas modernas</figcaption>
         </figure>
     </section>
 
     <!-- Sobre Nós -->
-    <section id="sobre" class="section container about">
+    <section id="sobre" class="about u-section l-container">
         <figure class="about__media">
             <img src="https://picsum.photos/id/1011/800/600" srcset="
           https://picsum.photos/id/1011/480/360 480w,
           https://picsum.photos/id/1011/768/576 768w,
           https://picsum.photos/id/1011/1200/900 1200w
         " sizes="(max-width: 900px) 100vw, 50vw" alt="Equipe criativa colaborando" />
-            <figcaption class="sr-only">Equipe criativa colaborando</figcaption>
+            <figcaption class="u-sr-only">Equipe criativa colaborando</figcaption>
         </figure>
         <div class="about__content">
-            <h2>Sobre nós</h2>
-            <p>Somos uma agência orientada a métricas e estética. Unimos negócios, design e tecnologia para lançar
-                produtos com impacto.</p>
-            <ul class="check">
-                <li>Mobile-first e acessibilidade</li>
-                <li>Performance, SEO técnico e conteúdo</li>
-                <li>Processo colaborativo e transparente</li>
+            <h2 class="about__title">Sobre nós</h2>
+            <p class="about__text">Somos uma agência orientada a métricas e estética. Unimos negócios, design e
+                tecnologia para lançar produtos com impacto.</p>
+            <ul class="list-check">
+                <li class="list-check__item">Mobile-first e acessibilidade</li>
+                <li class="list-check__item">Performance, SEO técnico e conteúdo</li>
+                <li class="list-check__item">Processo colaborativo e transparente</li>
             </ul>
         </div>
     </section>
 
-    <!-- Serviços (Grid) -->
-    <section id="servicos" class="section container">
-        <header class="section__header">
-            <h2>Serviços</h2>
-            <p>Do conceito ao lançamento, entregamos soluções ponta a ponta.</p>
+    <!-- Serviços -->
+    <section id="servicos" class="services u-section l-container">
+        <header class="section-header">
+            <h2 class="section-header__title">Serviços</h2>
+            <p class="section-header__subtitle">Do conceito ao lançamento, entregamos soluções ponta a ponta.</p>
         </header>
 
-        <div class="grid grid--cards">
-            <article class="card">
-                <h3>Design Gráfico</h3>
-                <p>Identidades visuais, materiais impressos e digitais que comunicam sua marca.</p>
+        <div class="services__list">
+            <article class="service-card">
+                <h3 class="service-card__title">Design Gráfico</h3>
+                <p class="service-card__text">Identidades visuais, materiais impressos e digitais que comunicam sua
+                    marca.</p>
             </article>
-            <article class="card">
-                <h3>Desenvolvimento Web</h3>
-                <p>Sites e landing pages com performance, segurança e manutenção simples.</p>
+            <article class="service-card">
+                <h3 class="service-card__title">Desenvolvimento Web</h3>
+                <p class="service-card__text">Sites e landing pages com performance, segurança e manutenção simples.</p>
             </article>
-            <article class="card">
-                <h3>Branding</h3>
-                <p>Estratégia de marca, posicionamento e diretrizes consistentes.</p>
+            <article class="service-card">
+                <h3 class="service-card__title">Branding</h3>
+                <p class="service-card__text">Estratégia de marca, posicionamento e diretrizes consistentes.</p>
             </article>
-            <article class="card">
-                <h3>UI/UX</h3>
-                <p>Wireframes, protótipos, testes e design system escalável.</p>
+            <article class="service-card">
+                <h3 class="service-card__title">UI/UX</h3>
+                <p class="service-card__text">Wireframes, protótipos, testes e design system escalável.</p>
             </article>
         </div>
     </section>
 
     <!-- Depoimentos -->
-    <section id="depoimentos" class="section container">
-        <header class="section__header">
-            <h2>Depoimentos</h2>
+    <section id="depoimentos" class="testimonials u-section l-container">
+        <header class="section-header">
+            <h2 class="section-header__title">Depoimentos</h2>
         </header>
-        <div class="testimonials">
-            <blockquote class="t-card">“A equipe elevou nosso site e as conversões.” <cite>— Marina, CEO @ Fintop</cite>
-            </blockquote>
-            <blockquote class="t-card">“Design consistente e impacto em SEO.” <cite>— Carlos, Head de Mkt @
+        <div class="testimonials__list">
+            <blockquote class="testimonials__item">“A equipe elevou nosso site e as conversões.” <cite>— Marina, CEO @
+                    Fintop</cite></blockquote>
+            <blockquote class="testimonials__item">“Design consistente e impacto em SEO.” <cite>— Carlos, Head de Mkt @
                     Edutech</cite></blockquote>
-            <blockquote class="t-card">“Experiência fluida no mobile. Recomendo!” <cite>— Júlia, PM @ Retail</cite>
-            </blockquote>
+            <blockquote class="testimonials__item">“Experiência fluida no mobile. Recomendo!” <cite>— Júlia, PM @
+                    Retail</cite></blockquote>
         </div>
     </section>
 
     <!-- Contato -->
-    <section id="contato" class="section container contact">
-        <header class="section__header">
-            <h2>Contato</h2>
+    <section id="contato" class="contact u-section l-container">
+        <header class="section-header">
+            <h2 class="section-header__title">Contato</h2>
         </header>
 
-        <div class="contact__grid">
+        <div class="contact__layout">
             <address class="contact__info">
-                <p><strong>Endereço:</strong> Rua Criativa, 123 — São Paulo, SP</p>
-                <p><strong>Telefone:</strong> <a href="tel:+5511999999999">(11) 99999-9999</a></p>
-                <p><strong>E‑mail:</strong> <a
+                <p class="contact__info-line"><strong>Endereço:</strong> Rua Criativa, 123 — São Paulo, SP</p>
+                <p class="contact__info-line"><strong>Telefone:</strong> <a class="contact__link"
+                        href="tel:+5511999999999">(11) 99999-9999</a></p>
+                <p class="contact__info-line"><strong>E‑mail:</strong> <a class="contact__link"
                         href="mailto:contato@agenciacriativaweb.com">contato@agenciacriativaweb.com</a></p>
             </address>
 
-            <form class="form" action="#" method="post">
-                <label for="nome">Nome</label>
-                <input id="nome" name="nome" type="text" placeholder="Seu nome" required />
+            <form class="form contact__form" action="#" method="post">
+                <label class="form__label" for="nome">Nome</label>
+                <input class="form__input" id="nome" name="nome" type="text" placeholder="Seu nome" required />
 
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+                <label class="form__label" for="email">E-mail</label>
+                <input class="form__input" id="email" name="email" type="email" placeholder="seu@email.com" required />
 
-                <label for="mensagem">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Conte-nos seu projeto"
-                    required></textarea>
+                <label class="form__label" for="mensagem">Mensagem</label>
+                <textarea class="form__textarea" id="mensagem" name="mensagem" rows="5"
+                    placeholder="Conte-nos seu projeto" required></textarea>
 
-                <button class="btn btn--primary" type="submit">Enviar</button>
+                <button class="btn btn--primary form__button" type="submit">Enviar</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer container">
-        <p>© <span id="year"></span> Agência Criativa Web. Todos os direitos reservados.</p>
-        <ul class="social">
-            <li><a href="#" aria-label="Instagram">Instagram</a></li>
-            <li><a href="#" aria-label="Behance">Behance</a></li>
-            <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+    <footer class="site-footer l-container">
+        <p class="site-footer__copy">© <span id="year"></span> Agência Criativa Web. Todos os direitos reservados.</p>
+        <ul class="site-footer__social">
+            <li class="site-footer__social-item"><a class="site-footer__social-link" href="#"
+                    aria-label="Instagram">Instagram</a></li>
+            <li class="site-footer__social-item"><a class="site-footer__social-link" href="#"
+                    aria-label="Behance">Behance</a></li>
+            <li class="site-footer__social-item"><a class="site-footer__social-link" href="#"
+                    aria-label="LinkedIn">LinkedIn</a></li>
         </ul>
     </footer>
 
